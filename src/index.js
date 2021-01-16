@@ -2,16 +2,92 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+const names = [
+  {
+    "name": "Ville",
+    "amount": 24
+  },
+  {
+    "name": "Anna",
+    "amount": 6
+  },
+  {
+    "name": "Antti",
+    "amount": 22
+  },
+  {
+    "name": "Sanna",
+    "amount": 5
+  },
+  {
+    "name": "Mikko",
+    "amount": 19
+  },
+  {
+    "name": "Minna",
+    "amount": 5
+  },
+  {
+    "name": "Timo",
+    "amount": 18
+  },
+  {
+    "name": "Satu",
+    "amount": 5
+  },
+  {
+    "name": "Tuomas",
+    "amount": 16
+  },
+  {
+    "name": "Tiina",
+    "amount": 5
+  },
+  {
+    "name": "Tero",
+    "amount": 15
+  },
+  {
+    "name": "Kati",
+    "amount": 5
+  },
+  {
+    "name": "Sami",
+    "amount": 15
+  },
+  {
+    "name": "Henna",
+    "amount": 4
+  },
+  {
+    "name": "Mika",
+    "amount": 12
+  },
+  {
+    "name": "Liisa",
+    "amount": 4
+  },
+  {
+    "name": "Janne",
+    "amount": 12
+  },
+  {
+    "name": "Paula",
+    "amount": 4
+  },
+  {
+    "name": "Petri",
+    "amount": 11
+  },
+  {
+    "name": "Suvi",
+    "amount": 4
+  }
+]
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App names={names} />,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
