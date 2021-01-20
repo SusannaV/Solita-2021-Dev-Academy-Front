@@ -2,9 +2,10 @@ import React from "react";
 
 const Entry = ({ nameentry }) => {
   return (
-    <li key={nameentry.name}>
-      {nameentry.name} {nameentry.amount}
-    </li>
+    <tr key={nameentry.name}>
+      <td>{nameentry.name}</td>
+      <td> {nameentry.amount}</td>
+    </tr>
   );
 };
 

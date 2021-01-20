@@ -1,5 +1,6 @@
 import React from "react";
 import Entry from "./Nameentry";
+import Table from "react-bootstrap/Table";
 
 const Names = (props) => {
   const namesToShow =
@@ -10,11 +11,19 @@ const Names = (props) => {
         );
 
   return (
-    <div>
-      {namesToShow.map((dude) => (
-        <Entry key={dude.name} nameentry={dude} />
-      ))}
-    </div>
+    <Table striped size="sm">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        {namesToShow.map((dude) => (
+          <Entry nameentry={dude} />
+        ))}
+      </tbody>
+    </Table>
   );
 };
 

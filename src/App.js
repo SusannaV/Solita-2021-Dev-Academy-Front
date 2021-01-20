@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Filter from "./components/Filter";
 import ShowNames from "./components/ShowNames";
 import nameService from "./services/names";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const App = () => {
   const [names, setNames] = useState([]);
@@ -38,8 +39,8 @@ const App = () => {
   }, [names, sorter]);
 
   return (
-    <div>
-      <h2>Name Application</h2>
+    <div className="container">
+      <h1>Name Application</h1>
       <h4>Total amount of people included in the list: {totalPeople} </h4>
       <p>
         Want to find someone in particular? Try typing their name in the
@@ -48,13 +49,20 @@ const App = () => {
       <Filter newSearch={newSearch} handleSearch={handleSearch} />
       <h2>List of names</h2>
 
-      <p>
-        Order by:
-        <select onChange={(e) => setSorter(e.target.value)}>
-          <option value="amount" label="Most popular" />
-          <option value="name" label="Alphabetical order" />
-        </select>
-      </p>
+      <Dropdown>
+        <Dropdown.Toggle variant="info" id="order-dropdown">
+          Order list
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item onSelect={(e) => setSorter("amount")}>
+            Most popular first
+          </Dropdown.Item>
+          <Dropdown.Item onSelect={(e) => setSorter("name")}>
+            Alphabetically
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
 
       <ShowNames search={newSearch} names={order} />
     </div>
@@ -62,5 +70,3 @@ const App = () => {
 };
 
 export default App;
-
-//jatka 2.c npm

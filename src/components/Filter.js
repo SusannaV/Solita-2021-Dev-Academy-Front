@@ -1,11 +1,17 @@
 import React from "react";
+import Form from "react-bootstrap/Form";
 
 const Filter = (props) => {
   return (
-    <div>
-      Filter shown with:{" "}
-      <input value={props.newSearch} onChange={props.handleSearch} />
-    </div>
+    <Form>
+      <Form.Label>Filter shown with:</Form.Label>
+      <Form.Control
+        type="search"
+        placeholder="Try searching for a name"
+        value={props.newSearch}
+        onChange={props.handleSearch}
+      />
+    </Form>
   );
 };
 
