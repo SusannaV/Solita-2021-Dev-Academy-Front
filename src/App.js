@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Entry from "./components/Nameentry";
 import Filter from "./components/Filter";
 import ShowNames from "./components/ShowNames";
+import nameService from "./services/names";
 
-const App = ({ names }) => {
+const App = () => {
+  const [names, setNames] = useState([]);
   const [order, setOrder] = useState([]);
   const [sorter, setSorter] = useState("amount");
   const [newSearch, setNewSearch] = useState("");
@@ -13,6 +14,13 @@ const App = ({ names }) => {
   const handleSearch = (event) => {
     setNewSearch(event.target.value);
   };
+
+  useEffect(() => {
+    console.log("Here you go!");
+    nameService.getAll().then((names) => {
+      setNames(names);
+    });
+  }, []);
 
   useEffect(() => {
     const sortArray = (type) => {
@@ -54,3 +62,5 @@ const App = ({ names }) => {
 };
 
 export default App;
+
+//jatka 2.c npm
