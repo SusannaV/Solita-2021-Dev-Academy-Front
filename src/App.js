@@ -12,10 +12,12 @@ const App = () => {
 
   const totalPeople = names.reduce((s, t) => s + t.amount, 0);
 
+  //Activate search when value is entered to searchbox
   const handleSearch = (event) => {
     setNewSearch(event.target.value);
   };
 
+  //Get the initial list of names
   useEffect(() => {
     console.log("Here you go!");
     nameService.getAll().then((names) => {
@@ -23,6 +25,7 @@ const App = () => {
     });
   }, []);
 
+  //Sort names by criteria selected in the dropdown menu
   useEffect(() => {
     const sortArray = (type) => {
       var sorted;
@@ -40,17 +43,24 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>Name Application</h1>
-      <h4>Total amount of people included in the list: {totalPeople} </h4>
+      <h1 class="display-1">Name Application</h1>
+      <p class="lead">
+        This list contains the top-10 of both male and female names in Solita.
+        The amount of people included in the list is {totalPeople}.
+      </p>
       <p>
         Want to find someone in particular? Try typing their name in the
         searchbox below.
       </p>
       <Filter newSearch={newSearch} handleSearch={handleSearch} />
-      <h2>List of names</h2>
 
-      <Dropdown>
-        <Dropdown.Toggle variant="info" id="order-dropdown">
+      <h2>List of names</h2>
+      <Dropdown classname="ddmenu">
+        <Dropdown.Toggle
+          variant="info"
+          id="order-dropdown"
+          vertical-align="middle"
+        >
           Order list
         </Dropdown.Toggle>
 
@@ -65,6 +75,12 @@ const App = () => {
       </Dropdown>
 
       <ShowNames search={newSearch} names={order} />
+      <footer class="bg-light text-center">
+        <div class="text-center p-3">
+          © 2021 Copyright:
+          <a href="https://github.com/SusannaV/">Susanna Veijalainen</a>
+        </div>
+      </footer>
     </div>
   );
 };

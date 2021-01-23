@@ -3,11 +3,10 @@ import Form from "react-bootstrap/Form";
 
 const Filter = (props) => {
   return (
-    <Form>
-      <Form.Label>Filter shown with:</Form.Label>
+    <Form classname="searchform">
       <Form.Control
         type="search"
-        placeholder="Try searching for a name"
+        placeholder="Search for..."
         value={props.newSearch}
         onChange={props.handleSearch}
       />

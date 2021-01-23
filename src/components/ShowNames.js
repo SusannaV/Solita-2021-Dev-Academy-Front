@@ -3,6 +3,7 @@ import Entry from "./Nameentry";
 import Table from "react-bootstrap/Table";
 
 const Names = (props) => {
+  //filter names by what is entered in the searchbox
   const namesToShow =
     props.search === ""
       ? props.names
@@ -11,7 +12,7 @@ const Names = (props) => {
         );
 
   return (
-    <Table striped size="sm">
+    <Table striped variant="info">
       <thead>
         <tr>
           <th>Name</th>
