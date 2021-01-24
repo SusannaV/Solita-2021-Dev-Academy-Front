@@ -19,7 +19,6 @@ const App = () => {
 
   //Get the initial list of names
   useEffect(() => {
-    console.log("Here you go!");
     nameService.getAll().then((names) => {
       setNames(names);
     });
@@ -34,7 +33,6 @@ const App = () => {
       } else if (type === "amount") {
         sorted = [...names].sort((a, b) => b.amount - a.amount);
       }
-      console.log(sorted);
       setOrder(sorted);
     };
 
