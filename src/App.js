@@ -44,7 +44,8 @@ const App = () => {
       <h1 class="display-1">Name Application</h1>
       <p class="lead">
         This list contains the top-10 of both male and female names in Solita.
-        The amount of people included in the list is {totalPeople}.
+        <br />
+        The total amount of people included in the list is <b>{totalPeople}</b>.
       </p>
       <p>
         Want to find someone in particular? Try typing their name in the
