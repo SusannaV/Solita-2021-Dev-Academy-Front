@@ -1,9 +1,13 @@
 # Solita Dev-Academy 2021 Exercise - Name Application
 
-#### Heroku Address for this application is: https://murmuring-taiga-78923.herokuapp.com/
+### Heroku Address for this application is: https://murmuring-taiga-78923.herokuapp.com/
 
-##### Repository for the back-end: https://github.com/SusannaV/Solita-2021-Dev-Academy 
+#### Repository for the back-end: https://github.com/SusannaV/Solita-2021-Dev-Academy 
 
+This app can be launched from Heroku (linked above). It also has one API endpoint at https://murmuring-taiga-78923.herokuapp.com/api/names
+
+
+### Original task specifications:
 Your task is to implement a name application. The application should have an user interface. The user interface can be either a web application or an api. (It can even contain both if you have enough time and enthusiasm.)
 
 The user interface should provide at least the first one of the following requirements, but again, you’re allowed to implement them all.
